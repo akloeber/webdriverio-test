@@ -1,15 +1,20 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    "esModuleInterop": true,
     "paths": {
       "*": [
         "./*"
       ]
     },
+    "module": "commonjs", // compiling for Node.js
+    "strict": true,
+    "target": "es2015",
     "types": [
       "node",
       "@wdio/sync",
       "@wdio/mocha-framework"
     ]
-  }
+  },
+  "include": ["**/*.ts"]
 }
