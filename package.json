@@ -10,5 +10,8 @@
     "@wdio/sync": "^5.10.1",
     "chromedriver": "^75.0.0",
     "wdio-chromedriver-service": "^5.0.2"
+  },
+  "scripts": {
+    "test": "wdio wdio.conf.js"
   }
 }
