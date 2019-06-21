@@ -19,6 +19,7 @@
     "webdriverio": "^5.10.7"
   },
   "scripts": {
+    "build": "tsc",
     "test": "wdio wdio.conf.js"
   }
 }

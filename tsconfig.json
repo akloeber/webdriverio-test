@@ -8,6 +8,7 @@
       ]
     },
     "module": "commonjs", // compiling for Node.js
+    "outDir": "dist",
     "strict": true,
     "target": "es2015",
     "types": [
