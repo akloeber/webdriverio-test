@@ -4,7 +4,12 @@ import {expect} from 'chai';
 global.expect = expect;
 
 // noinspection JSUnusedGlobalSymbols,JSLastCommaInObjectLiteral,JSUnusedLocalSymbols
-const config: WebdriverIO.Config = {
+const config: WebdriverIO.Config & {
+    mochawesomeOpts: {
+        includeScreenshots?: boolean,
+        screenshotUseRelativePath?: boolean
+    }
+} = {
     //
     // ====================
     // Runner Configuration
@@ -130,7 +135,15 @@ const config: WebdriverIO.Config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
+    reporters: [
+        'spec',
+        ['mochawesome', {
+            outputDir: './var/results',
+            outputFileFormat: function(opts: any) {
+                return `results-${opts.cid}.json`
+            }
+        }],
+    ],
 
     //
     // Options to be passed to Mocha.
@@ -141,6 +154,10 @@ const config: WebdriverIO.Config = {
         require: [
             'tsconfig-paths/register'
         ]
+    },
+    mochawesomeOpts: {
+        includeScreenshots:true,
+        screenshotUseRelativePath:true
     },
     //
     // =====
