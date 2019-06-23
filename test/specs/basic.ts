@@ -1,6 +1,5 @@
 
 import WebdriverIoPage from 'pageobjects/webdriverio.page';
-import {expect} from 'chai';
 
 suite('webdriver.io page', () => {
 
