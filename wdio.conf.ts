@@ -262,4 +262,5 @@ const config: WebdriverIO.Config = {
     //}
 };
 
+// noinspection JSUnusedGlobalSymbols
 export {config}
